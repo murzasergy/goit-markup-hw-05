@@ -573,9 +573,9 @@ img {
 .project-link {
   display: block;
   transition: box-shadow var(--transition);
-v
+
 }
-.project-link:hofer,
+.project-link:hover,
 .project-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -609,22 +609,43 @@ v
 }
 /* modal-window */
 .backdrop {
+  
   position: fixed;
   z-index: 100;
   left: 0px;
-  top: 88px;
+  top: 0px;
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-
 }
 .modal {
   position: absolute;
+ 
   left: 50%;
-  right: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
   height: 576px;
   background: #FCFCFC;
 
+}
+.modal-sloce-btn {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #E7E9FC;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0px;
+   
+}
+.modal-sloce-btn:hover .modal-sloce-btn-icon,
+.modal-sloce-btn:focus .modal-sloce-btn-icon {
+  fill: var(--actient-color-);
 }
