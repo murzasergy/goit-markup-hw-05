@@ -10,6 +10,7 @@
   --card-set-gap: 24px;
   --border-color: #8e8f99;
   --teal-color: teal;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -100,6 +101,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--title-color);
+  transition: color var(--transition);
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -119,6 +121,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-color-text);
+  transition: color var(--transition);
 }
 .contacts-link:hover,
 .contacts-link:focus {
@@ -194,6 +197,7 @@ img {
   display: block;
   margin: 0px auto;
   border: none;
+  transition: background-color var(--transition);
 }
 .btn-main:hover {
   background-color: var(--hover-color);
@@ -332,6 +336,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--transition);
 }
 .our-team-soc-link:hover,
 .our-team-soc-link:focus {
@@ -350,6 +355,9 @@ img {
 .customers-list-icon {
   margin-right: 24px;
   padding-left: 0px;
+  transform: border-color var(--transition);
+  
+  
 }
 .customers-list-icon:last-child {
   margin-right: 24;
@@ -370,6 +378,7 @@ img {
   justify-content: center;
   height: 88px;
   width: 168px;
+  transition: fill var(--transition), border-color var(--transition);
 }
 /* .customers-link:hover .customers-list-icon{
  fill: var(--footer-color-logo);
@@ -425,10 +434,14 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--transition);
+  
+  
 }
 .footer-soc-link:hover,
 .footer-soc-link:focus {
   background-color: var(--teal-color);
+  
 }
 
 .footer-soc-list {
@@ -460,6 +473,8 @@ img {
   color: var(--actient-color-);
   font-family: "Roboto", sans-serif;
   cursor: pointer;
+  transition: box-shadow var(--transition), border-color var(--transition), color var(--transition);
+  
 }
 .btn:hover {
   background: var(--hover-color);
@@ -473,7 +488,6 @@ img {
   /* outline: 1px solid tomato; */
   padding: 0;
   margin: 0;
-  /* list-style: 0; */
   display: flex;
   flex-wrap: wrap;
   margin-left: calc(-1 * var(--card-set-gap));
@@ -546,6 +560,7 @@ img {
   color: var(--actient-color-);
   font-family: "Roboto", sans-serif;
   cursor: pointer;
+  transition: box-shadow var(--transition), border-color var(--transition), color var(--transition);
 }
 .btn:hover {
   background: var(--hover-color);
@@ -553,12 +568,63 @@ img {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-color: var(--hover-color);
   color: var(--white-color);
+  
 }
 .project-link {
   display: block;
+  transition: box-shadow var(--transition);
+v
 }
-.project-link:hover,
+.project-link:hofer,
 .project-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  overflow: auto;
+  transform: translate(0, 100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--actient-color-);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--footer-color-logo);
+  letter-spacing: 0.02em;
+  padding-bottom: 164px;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.wraper-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.project-link:hover .overlay,
+.project-link:focus .overlay {
+  transform: translate(0, 0);
+}
+/* modal-window */
+.backdrop {
+  position: fixed;
+  z-index: 100;
+  left: 0px;
+  top: 88px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+
+}
+.modal {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  height: 576px;
+  background: #FCFCFC;
+
 }
